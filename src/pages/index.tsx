@@ -1,26 +1,71 @@
 import * as React from "react";
 import { Topbar } from "../components/Topbar";
 import { HomePage } from "../components/HomePage";
+import { Skills } from "../components/Skills";
+import "../styles/normalize.css";
+import "../styles/index.css";
+import { graphql } from "gatsby";
+import { Profile } from "../components/Profile";
+import { ImageDataLike } from "gatsby-plugin-image";
 
-// styles
-const pageStyles: React.CSSProperties | undefined = {
-  color: "#232129",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-  width: "100%",
-  height: "100%",
-};
+interface Props {
+  data: {
+    datoCmsPerfil: {
+      fotoDePerfil: ImageDataLike;
+    };
+    datoCmsDescripcion: {
+      sobremi: string;
+    };
+    allDatoCmsHabilidad: {
+      nodes: [
+        {
+          habilidad: string;
+          porcentaje: number;
+          logo: ImageDataLike;
+        }
+      ];
+    };
+  };
+}
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({ data }: Props) => {
   return (
-    <main style={pageStyles}>
+    <main className="pageStyles">
       <title>Portafolio</title>
       <div>
         <Topbar />
         <HomePage />
+        <Profile
+          image={data.datoCmsPerfil.fotoDePerfil}
+          info={data.datoCmsDescripcion.sobremi}
+        />
+        <Skills allDatoCmsHabilidad={data.allDatoCmsHabilidad} />
       </div>
     </main>
   );
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query MyQuery {
+    datoCmsPerfil {
+      fotoDePerfil {
+        gatsbyImageData(width: 150, placeholder: BLURRED)
+      }
+    }
+    datoCmsDescripcion {
+      sobremi
+    }
+    allDatoCmsHabilidad {
+      nodes {
+        habilidad
+        porcentaje
+        logo {
+          gatsbyImageData(width: 100, placeholder: BLURRED)
+        }
+      }
+    }
+  }
+`;
