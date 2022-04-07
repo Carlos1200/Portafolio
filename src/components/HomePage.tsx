@@ -5,7 +5,11 @@ import React from "react";
 export const HomePage = () => {
   return (
     <div>
-      <div className="parallaxStyles"></div>
+      <StaticImage
+        src="../images/paralax.jpg"
+        className="parallaxStyles"
+        alt="paralax"
+      />
       <div className="parallaxContentStyles">
         <div>
           <p className="subTitleStyles">Hello, World.</p>
