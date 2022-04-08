@@ -14,6 +14,7 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
+    "gatsby-background-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
