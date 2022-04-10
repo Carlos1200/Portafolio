@@ -1,10 +1,11 @@
 import * as React from "react";
 
 interface Props {
-  onClickProject: any;
+  onClickProject: () => void;
+  onClickContact: () => void;
 }
 
-export const Topbar = ({ onClickProject }: Props) => {
+export const Topbar = ({ onClickProject, onClickContact }: Props) => {
   return (
     <div className="topBarStyles">
       <div className="topBarDivStyles">
@@ -12,7 +13,7 @@ export const Topbar = ({ onClickProject }: Props) => {
           <a className="topBarTitleStyles" onClick={onClickProject}>
             Portfolio
           </a>
-          <a className="topBarTitleStyles" href="">
+          <a className="topBarTitleStyles" onClick={onClickContact}>
             Contact
           </a>
         </nav>

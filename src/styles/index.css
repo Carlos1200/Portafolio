@@ -412,6 +412,17 @@
     position: relative;
 }
 
+/* Contact */
+
+.marginContact{
+    margin-bottom: 2.5rem;
+}
+.mailLink{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
 /* Effects */
 
 .typingBlink{

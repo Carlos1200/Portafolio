@@ -9,6 +9,7 @@ import { Profile } from "../components/Profile";
 import { ImageDataLike } from "gatsby-plugin-image";
 import { Projects } from "../components/Projects";
 import { Experience } from "../components/Experience";
+import { Contact } from "../components/Contact";
 
 interface Props {
   data: {
@@ -62,11 +63,20 @@ const IndexPage = ({ data }: Props) => {
       block: "start",
       inline: "nearest",
     });
+  const onClickContact = () =>
+    refContact.current!.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
   return (
     <main className="pageStyles">
       <title>Portafolio</title>
       <div>
-        <Topbar onClickProject={onClickProject} />
+        <Topbar
+          onClickProject={onClickProject}
+          onClickContact={onClickContact}
+        />
         <HomePage />
         <Profile
           image={data.datoCmsPerfil.fotoDePerfil}
@@ -78,6 +88,10 @@ const IndexPage = ({ data }: Props) => {
           refProject={refProject}
         />
         <Experience nodes={data.allDatoCmsTrabajo.nodes} />
+        <Contact
+          image={data.datoCmsPerfil.fotoDePerfil}
+          refContact={refContact}
+        />
       </div>
     </main>
   );

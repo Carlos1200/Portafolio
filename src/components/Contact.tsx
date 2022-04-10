@@ -1,3 +1,4 @@
+import React from "react";
 import {
   GatsbyImage,
   getImage,
@@ -5,21 +6,20 @@ import {
   ImageDataLike,
   StaticImage,
 } from "gatsby-plugin-image";
-import React from "react";
 
 interface Props {
   image: ImageDataLike;
-  info: string;
+  refContact: React.Ref<HTMLDivElement>;
 }
 
-export const Profile = ({ image, info }: Props) => {
+export const Contact = ({ image, refContact }: Props) => {
   const imageGatsby = getImage(image) || ({} as IGatsbyImageData);
   return (
-    <section className="contentStyles">
-      <div>
-        <h2 className="titleStyles">Profile</h2>
-        <div className="centerObject">
-          <div className="cardStyle centerObject">
+    <section className="contentStyles" ref={refContact}>
+      <h2 className="titleStyles">Contact</h2>
+      <div className="centerObject">
+        <div className="cardStyle marginContact">
+          <div className="centerObject">
             <div className="border-color centerObject">
               <GatsbyImage
                 image={imageGatsby}
@@ -27,10 +27,15 @@ export const Profile = ({ image, info }: Props) => {
                 alt="Perfil"
               />
             </div>
-            <div>
-              <p className="name">Carlos Herrera</p>
-              <p>El Salvador, San Salvador</p>
-            </div>
+          </div>
+          <div>
+            <p className="name">Carlos Herrera</p>
+            <p>carlos1200herrera@gmail.com</p>
+            <a className="mailLink" href="mailto:carlos1200herrera@gmail.com">
+              Send me an email to be in touch
+            </a>
+          </div>
+          <div className="centerObject">
             <nav className="links">
               <a href="https://github.com/Carlos1200" className="aLink">
                 <StaticImage
@@ -50,9 +55,6 @@ export const Profile = ({ image, info }: Props) => {
                 />
               </a>
             </nav>
-            <div className="about_me">
-              <p>{info}</p>
-            </div>
           </div>
         </div>
       </div>
