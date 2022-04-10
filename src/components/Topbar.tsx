@@ -1,11 +1,15 @@
 import * as React from "react";
 
-export const Topbar = () => {
+interface Props {
+  onClickProject: any;
+}
+
+export const Topbar = ({ onClickProject }: Props) => {
   return (
     <div className="topBarStyles">
       <div className="topBarDivStyles">
         <nav>
-          <a className="topBarTitleStyles" href="">
+          <a className="topBarTitleStyles" onClick={onClickProject}>
             Portfolio
           </a>
           <a className="topBarTitleStyles" href="">

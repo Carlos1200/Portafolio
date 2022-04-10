@@ -15,7 +15,7 @@ interface Props {
 export const Profile = ({ image, info }: Props) => {
   const imageGatsby = getImage(image) || ({} as IGatsbyImageData);
   return (
-    <div className="contentStyles">
+    <section className="contentStyles">
       <div>
         <h2 className="titleStyles">Profile</h2>
         <div className="centerObject">
@@ -56,6 +56,6 @@ export const Profile = ({ image, info }: Props) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

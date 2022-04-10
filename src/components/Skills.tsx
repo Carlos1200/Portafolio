@@ -29,7 +29,7 @@ export const Skills = ({ allDatoCmsHabilidad }: Props) => {
   });
 
   return (
-    <>
+    <section>
       <div className="contentStyles">
         <div className="centerObject">
           <h2 className="titleStyles">Skills</h2>
@@ -116,6 +116,6 @@ export const Skills = ({ allDatoCmsHabilidad }: Props) => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };

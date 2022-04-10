@@ -6,6 +6,37 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+}
+  ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+  ::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+  ::-webkit-scrollbar-thumb:active {
+    background: #000000;
+}
+  ::-webkit-scrollbar-track {
+    background: #222426;
+    border: 0px none #ffffff;
+}
+  ::-webkit-scrollbar-track:hover {
+    background: #666666;
+}
+  ::-webkit-scrollbar-track:active {
+    background: #333333;
+}
+  ::-webkit-scrollbar-corner {
+    background: transparent;
 }
 
 .contentStyles{
@@ -48,6 +79,7 @@
     margin-left: 1rem;
     padding: 0;
     text-decoration: none;
+    cursor: pointer;
     color: #F4EDE8;
 }
 
@@ -161,6 +193,10 @@
 	animation: pulse 2s infinite;
 }
 
+.aLink:active{
+    transform: scale(0.9);
+}
+
 .icon{
     width: 1.7rem;
     height: 1.5rem;
@@ -268,6 +304,112 @@
 
 .logoImage{
     object-fit: contain;
+}
+
+/* Projects */
+
+.projectsSection{
+    padding: 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+}
+
+
+@media (min-width: 600px) {
+    .projectsSection{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 900px) {
+    .projectsSection{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+.cardProject{
+    width: 90%;
+    height: 100%;
+    background-color: #191B1C;
+    color: #F4EDE8;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+.projectTitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 1.5rem;
+    color: #d4dbdb;
+}
+
+.projectInfo{
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #d4dbdb;
+}
+
+.projectDescription{
+    margin: 1rem 2rem;
+}
+
+.projectLink{
+    text-decoration: none;
+    padding: 0.05rem;
+    padding-bottom: 1.5rem;
+    border-radius: 50%;
+    background-color: #222426;
+    margin: 0.5rem;
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+}
+
+.projectLink:hover{
+    animation: pulse 2s infinite;
+}
+
+.projectLink:active{
+    transform: scale(0.9);
+}
+
+.projectLink:focus{
+    outline: none;
+}
+
+.projectLink:visited{
+    color: #d4dbdb;
+}
+
+.projectLink:link{
+    color: #d4dbdb;
+}
+
+/* Experience */
+
+.iconCircle{
+    padding: 0.1rem;
+    border-radius: 50%;
+    background-color: #191B1C;
+    transform: scale(1);
+}
+
+
+.iconExperience{
+    width: 2rem;
+    height: 2.5rem;
+    margin: 0.5rem;
+    padding-right: 0.1rem;
+    padding-left: 0.1rem;
+}
+
+.iconPosicionExp{
+    top: 1rem;
+    margin-left:2rem ;
+    position: relative;
 }
 
 /* Effects */

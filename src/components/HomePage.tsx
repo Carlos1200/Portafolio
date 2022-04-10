@@ -4,7 +4,7 @@ import React from "react";
 
 export const HomePage = () => {
   return (
-    <div>
+    <header>
       <StaticImage
         src="../images/paralax.jpg"
         className="parallaxStyles"
@@ -33,6 +33,6 @@ export const HomePage = () => {
           </p>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
