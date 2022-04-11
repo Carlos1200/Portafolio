@@ -30,7 +30,7 @@ export const HomePage = () => {
           </div>
         </div>
         <StaticImage
-          src="../images/paralax.jpg"
+          src="../images/paralax.png"
           className="parallaxStyles"
           alt="paralax"
         />
