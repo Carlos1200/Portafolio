@@ -1,4 +1,3 @@
-import { StaticImage } from "gatsby-plugin-image";
 import Typewriter from "typewriter-effect";
 import React from "react";
 
